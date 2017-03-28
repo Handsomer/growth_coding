@@ -23,5 +23,5 @@ while True:
             exit()
         #接收的为非退出信息，那么就往客户端发送信息。
         sock.send('Hello, %s!' % data)
-        sock.close()
+    sock.close()
     print 'Connection from %s:%s closed.' % addr
