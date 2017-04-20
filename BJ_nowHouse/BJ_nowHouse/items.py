@@ -14,4 +14,9 @@ class BjNowhouseItem(scrapy.Item):
     project_name = scrapy.Field()
     local_place = scrapy.Field()
     publish_date = scrapy.Field()
-    
+
+    use_for = scrapy.Field()
+    build_area = scrapy.Field()
+    build_in_area = scrapy.Field()
+    sale_for_build = scrapy.Field()
+    sale_for_build_in = scrapy.Field()
