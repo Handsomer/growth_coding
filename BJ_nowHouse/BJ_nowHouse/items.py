@@ -21,3 +21,14 @@ class BjNowhouseItem(scrapy.Item):
     build_in_area = scrapy.Field()
     sale_for_build = scrapy.Field()
     sale_for_build_in = scrapy.Field()
+
+class GzNowhouseItem(scrapy.Item):
+    project_name = scrapy.Field()
+    local_place = scrapy.Field()
+    saledHouse_num = scrapy.Field()
+    unsaledHouse_num = scrapy.Field()
+    developr = scrapy.Field()
+    area = scrapy.Field()
+    saled_area = scrapy.Field()
+    unsaled_area = scrapy.Field()
+    price = scrapy.Field()
