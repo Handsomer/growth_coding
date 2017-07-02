@@ -5,13 +5,13 @@ using namespace std;
 
 int main()
 {
-	int nArray[6] = { 1,6,2,4,7,3 };
-	BubbleSort(nArray,6);
-	for (int i = 0; i < sizeof(nArray)/sizeof(int);i++)
-	{
-		cout<<nArray[i]<<endl;
-	}
-
+	TreeNode*  p_root1 = new TreeNode;
+	TreeNode*  p_root2 = new TreeNode;
+	CreateTree1(p_root1);
+	CreateTree2(p_root2);
+	
+	mergeTrees(p_root1, p_root2);
+	pre(p_root1);
 	system("pause");
 	return 0;
 }
