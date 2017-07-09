@@ -120,3 +120,25 @@ void pre(TreeNode* p_root)
 	if (p_root->right)
 		pre(p_root->right);
 }
+
+//Arry pair sum
+int arrayPairSum(vector<int>& nums) 
+{
+	int nSum = 0;
+	sort(nums.begin(), nums.end());
+	vector<int>::iterator it;
+	for (it = nums.begin(); it < nums.end(); it = it + 2)nSum += *it;
+	return nSum;
+}
+
+//判断两个数的大小
+bool sortBy(int a, int b)
+{
+	return a < b;
+}
+
+//remove duplicates from sorted arry 2
+//int removeDuplicates(vector<int>& nums)
+//{
+//	int
+//}

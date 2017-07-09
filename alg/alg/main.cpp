@@ -1,17 +1,21 @@
-#include <iostream>
 #include "alg_lib.h"
-
-using namespace std;
 
 int main()
 {
-	TreeNode*  p_root1 = new TreeNode;
-	TreeNode*  p_root2 = new TreeNode;
-	CreateTree1(p_root1);
-	CreateTree2(p_root2);
-	
-	mergeTrees(p_root1, p_root2);
-	pre(p_root1);
+	vector<int> vec;
+	vec.push_back(1);
+	vec.push_back(5);
+	vec.push_back(3);
+	vec.push_back(9);
+	vector<int>::iterator it;
+	for (it = vec.begin(); it < vec.end(); it++)
+	{
+		cout << *it << endl;
+	}
+	sort(vec.begin(),vec.end(),sortBy);
+	int sum = 0;
+	sum = arrayPairSum(vec);
+	cout << sum << endl;
 	system("pause");
 	return 0;
-}
+} 

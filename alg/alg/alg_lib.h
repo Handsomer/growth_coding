@@ -1,4 +1,8 @@
-void show_hello();
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using  namespace std;
+
 void BubbleSort(int nArray[], int n);
 
 struct TreeNode {
@@ -14,3 +18,6 @@ TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2);
 void  CreateTree1(TreeNode * p_tree);
 void  CreateTree2(TreeNode * p_tree);
 void pre(TreeNode* p_root);
+int arrayPairSum(vector<int>& nums);//vector 需要使用 using namespace std; 来声明下
+
+bool sortBy(int a, int b);
