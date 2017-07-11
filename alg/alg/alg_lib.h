@@ -21,3 +21,8 @@ void pre(TreeNode* p_root);
 int arrayPairSum(vector<int>& nums);//vector 需要使用 using namespace std; 来声明下
 
 bool sortBy(int a, int b);
+//找到连续三个以内，集合的长度
+int getNum(vector<int>& vec);
+
+//冒泡排序
+void BubbleSort(int a[], int n);

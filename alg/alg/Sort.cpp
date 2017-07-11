@@ -139,6 +139,39 @@ bool sortBy(int a, int b)
 
 //remove duplicates from sorted arry 2
 //int removeDuplicates(vector<int>& nums)
-//{
-//	int
-//}
+int getNum(vector<int>& nums)
+{
+	if (nums.size() <= 2) return nums.size();
+	int index = 2;
+	for (int i = 2; i < nums.size(); i++)
+	{
+		if (nums[i] != nums[index - 2])
+		{
+			nums[index] = nums[i];
+			index += 1;
+		}
+	}
+	return index;
+}
+
+//Ã°ÅÝÅÅÐò
+void BubbleSort1(int a[], int n)
+{
+	int j, k;
+	int flag;
+
+	flag = n;
+	while (flag > 0)
+	{
+		k = flag;
+		flag = 0;
+		for (j = 1; j < k; j++)
+		{
+			if (a[j - 1] > a[j])
+			{
+				swap(a[j - 1], a[j]);
+				flag = j;
+			}
+		}
+	}
+}
