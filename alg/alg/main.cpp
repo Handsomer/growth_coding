@@ -17,7 +17,7 @@ int main()
 	//sum = getNum(vec);
 	//cout << sum << endl;
 	int a[10] = { 1,3,6,2,4,2,4,2,42,4 };
-	BubbleSort5(a, 10);
+	Insertsort(a, 10);
 	for (int i = 0; i < 10; i++)
 	{
 		cout << a[i] << endl;

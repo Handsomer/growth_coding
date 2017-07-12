@@ -26,3 +26,5 @@ int getNum(vector<int>& vec);
 
 //√∞≈›≈≈–Ú
 void BubbleSort(int a[], int n);
+//≤Â»Î≈≈–Ú
+void Insertsort(int a[], int n);
