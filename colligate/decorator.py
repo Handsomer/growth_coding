@@ -5,9 +5,9 @@
 
 def out(func):
     def add(*args,**kwargs):
-        print "原有功能"
+        print ("原有功能")
         r = func(*args,**kwargs)
-        print "后增功能"
+        print ("后增功能")
         return r
     return add
 
@@ -16,9 +16,9 @@ def out(func):
 #
 def out1(func):
     def add(*args,**kwargs):
-        print "start"
+        print ("start")
         r = func(*args,**kwargs)
-        print "end"
+        print ("end")
         return r
     return add
 
@@ -31,7 +31,7 @@ def out1(func):
 @out1
 @out
 def f(a,b):
-    print "xianyougongne",a,b
+    print ("xianyougongne",a,b)
 
 
 # n = out(f)
@@ -42,7 +42,7 @@ def run_time(func):
 	#修改生成器函数的名称
 	#相当于wrapper.__name__ = func.__name__ 
 	@functools.wraps(func)
-	def wrapper(*args, **kw):
+	def wrapper(*args, **kw): 
 		print("%s %s():" %(func.__name__,"start begin"))
 		return func(*args,**kw)
 	return wrapper

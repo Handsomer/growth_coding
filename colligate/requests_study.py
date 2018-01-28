@@ -1,3 +1,4 @@
+#coding=utf-8
 """
 脚本用途：该脚本是的方法来源于　Python的第三方库requets，
         由于该库对于Python的高质量使用，
@@ -15,14 +16,14 @@ def file_path():
     __file__：当前文件夹路径
     os.path.dirname(__file__)  获得所在上一级文件夹路径
     os.path.join()路径拼接
-    os.path.abspath　返回路径的绝对路径
+    os.path.abspath　返回W路径的绝对路径
     '''
     here = os.path.abspath(os.path.dirname(__file__))
     print (here)
     print (os.path.join(here,"request","__version__.py"))
 
 
-def exec():
+def m_exec():
     """
     exec:是Python的built-in函数，其作用很好描述，就是执行以string类型存储的Python代码。
     该实例中ans变量并没有显示的定义，但由于exec的使用在字符串中的ans = i+j，便相当于对ans的定义．
@@ -30,8 +31,9 @@ def exec():
     """
     i = 2
     j = 3
-    exec("ans=i+j")
-    print("ans=i+j:",ans)
+    exec("ans=1+2")
+    # ans=i+j
+    print(ans)
 
 def post_request():
     """
@@ -70,4 +72,4 @@ def post_request():
     b = r.content
     print(r.content)
 
-post_request()
+m_exec()
