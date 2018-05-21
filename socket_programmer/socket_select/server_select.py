@@ -23,7 +23,7 @@ while True:
     for r in readable_list:
         # 当客户端第一次连接服务端时
         if sk1 == r:
-            print 'accept'
+            print('accept')
             request, address = r.accept()
             request.sendall('receive data connect')
             request.setblocking(0)
@@ -33,7 +33,7 @@ while True:
             received = r.recv(1024)
             # 当正常接收客户端发送的数据时
             if received != 'exit':
-                print 'received data:', received
+                print('received data:', received)
                 r.sendall('recv data:%s'%received)
             # 当客户端关闭程序时，会发送过来空数据
             else:

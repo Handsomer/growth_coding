@@ -34,9 +34,9 @@ def trace(f):
       filename = frame.f_code.co_filename
       lineno = frame.f_lineno
       bname = os.path.basename(filename)
-      print "{}({}): {}".format(  bname,
+      print("{}({}): {}".format(  bname,
         lineno,
-        linecache.getline(filename, lineno).strip('\r\n')),
+        linecache.getline(filename, lineno).strip('\r\n')))
     return localtrace
   def _f(*args, **kwds):
     sys.settrace(globaltrace)
@@ -48,6 +48,6 @@ def trace(f):
 
 @trace
 def xxx():
-  print 1
-  print 22
-  print 333
+  print (1)
+  print (22)
+  print (333)
