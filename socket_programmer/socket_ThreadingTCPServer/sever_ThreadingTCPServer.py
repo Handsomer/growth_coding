@@ -13,10 +13,10 @@ class MyServer(SocketServer.BaseRequestHandler):
         while Flag:
             data = conn.recv(1024)
             if data == 'exit':
-                print "server recv exit"
+                print("server recv exit")
                 Flag = False
             else:
-                print "server recv data %s"%data
+                print("server recv data %s"%data)
                 conn.sendall('server recv data %s'%data)
 
 if __name__ == '__main__':
