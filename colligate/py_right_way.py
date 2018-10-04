@@ -113,3 +113,29 @@ Employee = namedtuple('Employee', 'name, age, salary')
 for row in rows:
     employee = Employee._make(row)
     print '{}age is {}, salary is {} '.format(employee.name, employee.age, employee.salary)
+
+
+#使用 isinstance来判断传入参数的类型
+
+# bad
+def get_size(some_object):
+    try:
+        return len(some_object)
+    except TypeError:
+        if some_object in (True, False, None):
+        return 1
+    else:
+        return int(some_object)
+
+print(get_size('hello'))
+print(get_size([1, 2, 3, 4, 5]))
+print(get_size(10.0))
+
+# good
+def get_size(some_object):
+    if isinstance(some_object, (list, dict, str, tuple)):
+        return len(some_object)
+    elif isinstance(some_object, (bool, type(None))):
+        return 1
+    elif isinstance(some_object, (int, float)):
+        return int(some_object)
