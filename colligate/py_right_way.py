@@ -21,7 +21,9 @@ print(function_right())
 print(function_right())
 print(function_right())
 
-#一切都是对象
+
+#一切都是对象, 使用对象的方式来代替需要多次调用的情景
+#比如加减乘除的四则运算
 # bad
 def print_addition_table():
     for x in range(1, 3):
@@ -58,3 +60,37 @@ def print_table(operator):
 
 for operator in (op.add, op.sub, op.mul, op.div):
     print_table(operator)
+
+# bad
+def apply_operation(left_operand, right_operand, operator):
+    if operator == '+':
+        return left_operand + right_operand
+    elif operator == '-':
+        return left_operand - right_operand
+    elif operator == '*':
+        return left_operand * right_operand
+    elif operator == '/':
+        return left_operand / right_operand
+# good
+def apply_operation(left_operand, right_operand, operator):
+    import operator as op
+    operator_mapper = {'+': op.add, '-': op.sub, '*': op.mul, '/': op.truediv}
+    return operator_mapper[operator](left_operand, right_operand)
+
+
+#使用字典来代替switch case的使用场景
+# bad
+def apply_operation(left_operand, right_operand, operator):
+    if operator == '+':
+        return left_operand + right_operand
+    elif operator == '-':
+        return left_operand - right_operand
+    elif operator == '*':
+        return left_operand * right_operand
+    elif operator == '/':
+        return left_operand / right_operand
+# good
+def apply_operation(left_operand, right_operand, operator):
+    import operator as op
+    operator_mapper = {'+': op.add, '-': op.sub, '*': op.mul, '/': op.truediv}
+    return operator_mapper[operator](left_operand, right_operand)
