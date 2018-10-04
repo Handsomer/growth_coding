@@ -94,3 +94,22 @@ def apply_operation(left_operand, right_operand, operator):
     import operator as op
     operator_mapper = {'+': op.add, '-': op.sub, '*': op.mul, '/': op.truediv}
     return operator_mapper[operator](left_operand, right_operand)
+
+
+#访问tuple的数据项时，可以用namedtuple代替index的方式访问
+
+# bad
+rows = [('lily', 20, 2000), ('lucy', 19, 2500)]
+for row in rows:
+    print '{}age is {}, salary is {} '.format(employee.name, employee.age, employee.salary)
+# bad
+rows = [('lily', 20, 2000), ('lucy', 19, 2500)]
+for row in rows:
+    print '{}age is {}, salary is {} '.format(row[0], row[1], row[2])
+
+# good
+from collections import  namedtuple
+Employee = namedtuple('Employee', 'name, age, salary')
+for row in rows:
+    employee = Employee._make(row)
+    print '{}age is {}, salary is {} '.format(employee.name, employee.age, employee.salary)
