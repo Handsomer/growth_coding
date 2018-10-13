@@ -46,6 +46,15 @@ class ac_70:
             second = ret
         return ret
 
+class ac_53():
+    def maxSubArray(self, nums):
+        for index, values in enumerate(nums):
+            if index == 0 :
+                continue
+            if nums[index-1] > 0:
+                nums[index] += nums[index-1]
+        return max(nums)
+
 
 if __name__ == '__main__':
     """
@@ -53,6 +62,9 @@ if __name__ == '__main__':
 
         print(ac_obj.maxProfit([7,1,5,3,6,4]))
         ac_obj = ac_70(4)
-    """
+    
     ac_obj = ac_70()
     print(ac_obj.climbStairs(4))
+    """
+    ac_obj = ac_53()
+    print(ac_obj.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
