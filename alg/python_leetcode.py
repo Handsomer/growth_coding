@@ -1,4 +1,6 @@
-#coding = utf-8
+#coding: utf-8
+
+
 
 ###### 动态规划算法 AC #################
 class ac_303:
@@ -56,6 +58,33 @@ class ac_53():
         return max(nums)
 
 
+###### offer AC #################
+
+# -*- coding:utf-8 -*-
+class Solution_ac3:
+    # array 二维列表
+    def Find(self, target, array):
+        # write code here
+        column_length = len(array[0]) #column 列       
+        row_length = len(array) #row 行
+        col, row = column_length - 1, 0
+        while True:
+            r_c_value = array[row][col]
+            if col < 0 or row >= row_length:
+                return False
+            if r_c_value == target:
+                return True
+            if array[row][col] > target:
+                col -= 1
+            if array[row][col] < target:
+                row += 1
+
+def test_offer3():
+    ac_obj = Solution_ac3()
+    array = [[1,2,8,9], [2,4,9,12], [6,8,11,15]]
+    print ac_obj.Find(15,array)
+                            
+
 if __name__ == '__main__':
     """
         ac_obj = ac_121()
@@ -66,5 +95,6 @@ if __name__ == '__main__':
     ac_obj = ac_70()
     print(ac_obj.climbStairs(4))
     """
-    ac_obj = ac_53()
-    print(ac_obj.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    #ac_obj = ac_53()
+    #print(ac_obj.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    test_offer3()
