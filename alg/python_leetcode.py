@@ -69,9 +69,10 @@ class Solution_ac3:
         row_length = len(array) #row 行
         col, row = column_length - 1, 0
         while True:
-            r_c_value = array[row][col]
             if col < 0 or row >= row_length:
                 return False
+            r_c_value = array[row][col]
+            #print row,col,r_c_value
             if r_c_value == target:
                 return True
             if array[row][col] > target:
@@ -81,8 +82,8 @@ class Solution_ac3:
 
 def test_offer3():
     ac_obj = Solution_ac3()
-    array = [[1,2,8,9], [2,4,9,12], [6,8,11,15]]
-    print ac_obj.Find(15,array)
+    array = [[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]
+    print ac_obj.Find(16,array)
                             
 
 if __name__ == '__main__':
