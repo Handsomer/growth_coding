@@ -22,4 +22,39 @@ def test_quicksort():
     print(ret_val)
     assert ret_val == sorted(ll)
 
-test_quicksort()
+def merge_sorted_list(list_a, list_b):
+    length_a, length_b = len(list_a), len(list_b)
+    a, b = 0, 0
+    ret_list = []
+    while a < length_a and b < length_b:
+        if list_a[a] <= list_b[b]:
+            ret_list.append(list_a[a])
+            a += 1
+        else:
+            ret_list.append(list_b[b])
+            b += 1
+    if a < length_a:
+        ret_list.extend(list_a[a: ])
+    if b < length_b:
+        ret_list.extend(list_b[b: ])
+    return ret_list
+
+def mergeSort(array):
+    if len(array) < 2:
+        return array
+    mid_index = len(array) // 2
+    left_list = mergeSort(array[:mid_index])
+    right_list = mergeSort(array[mid_index:])
+    sorted_list = merge_sorted_list(left_list, right_list)
+    return sorted_list
+
+def test_merge():
+    import random
+    ll = list(range(10))
+    random.shuffle(ll)
+    ret_list = mergeSort(ll)
+    print(ret_list)
+    assert ret_list == sorted(ll)
+
+# test_quicksort()
+# test_merge()
