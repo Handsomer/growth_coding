@@ -56,5 +56,21 @@ def test_merge():
     print(ret_list)
     assert ret_list == sorted(ll)
 
+def heapsort_use_heapq(iterable):
+    from heapq import heappush, heappop
+    items = []
+    for value in iterable:
+        heappush(items, value)
+    return [heappop(items) for i in range(len(items))]
+
+def test_heap():
+    import random
+    ll = list(range(10))
+    random.shuffle(ll)
+    ret_list = heapsort_use_heapq(ll)
+    print(ret_list)
+    assert ret_list == sorted(ll)
+
+# test_heap()
 # test_quicksort()
 # test_merge()
