@@ -2,10 +2,12 @@
 import threading
 
 n = [0]
+lock = threading.Lock()
 
 def foo():
-    n[0] += 1
-    n[0] += 1
+    with lock():
+        n[0] += 1
+        n[0] += 1
 
 threads_list = []
 for i in range(5000):
